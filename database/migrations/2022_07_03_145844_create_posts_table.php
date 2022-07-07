@@ -20,8 +20,9 @@ class CreatePostsTable extends Migration
             $table->string('category');
             $table->string('user');
             $table->string('image');
-            $table->string('attachment');
+            $table->string('attachment')->nullable();
             $table->text('content');
+            $table->string('status');
             $table->timestamps();
         });
     }

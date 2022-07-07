@@ -1,0 +1,137 @@
+/* Navbar */
+nav {
+    height: 70px;
+}
+
+#link-brand {
+    margin-right: 50px;
+    color: #0a929e;
+}
+
+.active {
+    color: #0a929e !important;
+}
+
+.active-dark {
+    color: #ffffff !important;
+}
+
+/* End Navbar */
+
+/* Content */
+/* .content {
+    padding-top: 70px;
+} */
+
+.box-header {
+    background-color: #0a929e;
+}
+
+/* End Content */
+
+/* Component */
+.btn {
+    border-radius: 3px !important;
+}
+
+.btn-primary {
+    background-color: #0a929e !important;
+    border: #0a929e !important;
+}
+
+.carousel-item {
+    height: 300px;
+}
+
+.my-badge {
+    color: #0a929e;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #0a929e;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.mylink-primary {
+    color: #0a929e !important;
+    margin-right: 10px;
+}
+
+.form-login-register {
+    width: 500px;
+    padding: 30px 20px 30px 20px;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    height: 40px;
+    width: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.set-mode{
+    margin-left: 20px;
+}
+
+/* End Component */
+
+/* Dark mode */
+.dark {
+    background-color: #000000;
+}
+
+.box {
+    background-color: #212529;
+}
+
+/* End Dark mode */
+
+@media (min-width: 1000px) {
+    .active {
+        background-color: #fafafa;
+        border-radius: 5px;
+        color: #ffffff;
+    }
+
+    .active-dark {
+        background-color: #34373b;
+        border-radius: 5px;
+    }
+
+    .box-header {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .box-new-post {
+        position: sticky;
+        top: 5rem;
+    }
+}
+
+@media (max-width:800px) {
+    .collapse {
+        background-color: #ffffff;
+        padding: 5px 10px 20px 10px;
+        margin-top: 30px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 5px;
+    }
+
+    .box-header {
+        padding-top: 50px !important;
+        padding-bottom: 30px;
+    }
+
+    .card {
+        vertical-align: middle;
+    }
+
+    .box-comment {
+        margin-bottom: 2rem;
+    }
+}

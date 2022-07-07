@@ -17,5 +17,6 @@ class Post extends Model
         'image',
         'attachment',
         'content',
+        'status',
     ];
 }

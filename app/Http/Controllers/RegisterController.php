@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Category;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -10,9 +11,19 @@ use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function index()
     {
-        dd('hello');
+        $categories = Category::all();
+        return view('pages.home.register',[
+            'title' => 'Daftar',
+            'active' => '',
+            'categories' => $categories,
+        ]);
     }
 
     public function store(Request $request)
@@ -23,8 +34,9 @@ class RegisterController extends Controller
             'password' => 'required|min:5',
         ]);
         $validatedData['role'] = "user";
+        $validatedData['status'] = "active";
         $validatedData['password'] = Hash::make($validatedData['password']);
         User::create($validatedData);
-        return response()->json(['success'=>$validatedData],200);
+        return redirect('login')->with('success','Pendaftaran berhasil');
     }
 }
