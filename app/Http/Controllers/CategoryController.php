@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Post;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -59,10 +60,14 @@ class CategoryController extends Controller
     {
         $id = $request->id;
         $category = Category::findOrFail($id);
+        $posts = Post::where(['category'=>$category->name]);
         $validatedData = $request->validate([
             'name' => ['required','min:3','unique:categories'],
         ]);
         $validatedData['slug']= Str::slug($validatedData['name']);
+        $posts->update([
+            'category' => $validatedData['name']
+        ]);
         $category->update($validatedData);
         return redirect('categories')->with('success','Kategori berhasil diupdate');
     }
